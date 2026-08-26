@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 function Home() {
   return (
     <div className="home-page">
       <section className="hero">
         <h1>NexOps</h1>
         <p>One dashboard for tickets, assets, network health, and support operations.</p>
-        <a href="/login" className="cta-button">Log In</a>
+        <Link to="/login" className="cta-button">Log In</Link>
       </section>
 
       <section className="features">

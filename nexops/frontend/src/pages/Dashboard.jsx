@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // Dashboard renders different sections depending on the logged in user's role.
 // Admins see the full operations view. Regular users only see their own tickets.
@@ -32,11 +33,10 @@ function Dashboard({ user, onLogout }) {
       </header>
 
       <nav className="dashboard-nav">
-        <a href="/tickets">Tickets</a>
-        {isAdmin && <a href="/assets">Assets</a>}
-        {isAdmin && <a href="/network">Network</a>}
-        {isAdmin && <a href="/reports">Reports</a>}
-        {isAdmin && <a href="/users">Users</a>}
+        <Link to="/tickets/new">Submit Ticket</Link>
+        {isAdmin && <Link to="/assets">Assets</Link>}
+        {isAdmin && <Link to="/network">Network</Link>}
+        {isAdmin && <Link to="/reports">Reports</Link>}
       </nav>
 
       <section className="dashboard-summary">

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // This component handles both login and register.
 // The toggleMode function switches which form is visible.
@@ -127,6 +128,10 @@ function AuthPage({ onLoginSuccess }) {
       <p onClick={toggleMode} className="auth-toggle">
         {isLoginMode ? 'Need an account? Register' : 'Already have an account? Log in'}
       </p>
+
+      {isLoginMode && (
+        <p><Link to="/forgot-password">Forgot your password?</Link></p>
+      )}
     </div>
   );
 }

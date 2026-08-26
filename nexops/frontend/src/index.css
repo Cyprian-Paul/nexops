@@ -1,0 +1,95 @@
+/* Base layout only, no visual styling.
+   Every class name here matches what the components already use,
+   so you can add your background image, colors, and animation
+   directly here or in your own stylesheet without touching any
+   component files. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.site-nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.site-content {
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-nav {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.dashboard-summary {
+  display: flex;
+  gap: 1rem;
+}
+
+.summary-card {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.asset-table,
+.network-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.asset-table th,
+.asset-table td,
+.network-table th,
+.network-table td {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.password-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
