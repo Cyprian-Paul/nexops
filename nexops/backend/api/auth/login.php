@@ -13,7 +13,7 @@ if (!$email || !$password) {
     send_response(400, ['error' => 'Email and password are required']);
 }
 
-$stmt = $pdo->prepare('SELECT id, name, email, password_hash, role, department, rank FROM users WHERE email = ?');
+$stmt = $pdo->prepare('SELECT id, name, email, password_hash, role, department, user_rank FROM users WHERE email = ?');
 $stmt->execute([$email]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -32,6 +32,6 @@ send_response(200, [
         'email' => $user['email'],
         'role' => $user['role'],
         'department' => $user['department'],
-        'rank' => $user['rank']
+        'user_rank' => $user['user_rank']
     ]
 ]);

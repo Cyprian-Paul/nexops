@@ -26,7 +26,7 @@ function Dashboard({ user, onLogout }) {
       <header className="dashboard-header">
         <div>
           <h2>Welcome, {user.name}</h2>
-          <p>{user.department} · {user.rank} · {user.role}</p>
+          <p>{user.department} · {user.user_rank} · {user.role}</p>
         </div>
         <button onClick={onLogout}>Log Out</button>
       </header>

@@ -9,7 +9,7 @@ $email = trim($data['email'] ?? '');
 $password = $data['password'] ?? '';
 $role = $data['role'] ?? 'user';
 $department = trim($data['department'] ?? '');
-$rank = $data['rank'] ?? 'junior';
+$user_rank = $data['rank'] ?? 'junior';
 
 if (!$name || !$email || !$password) {
     send_response(400, ['error' => 'Name, email, and password are required']);
@@ -19,8 +19,8 @@ if (!in_array($role, ['admin', 'user'])) {
     $role = 'user';
 }
 
-if (!in_array($rank, ['junior', 'senior', 'lead', 'manager'])) {
-    $rank = 'junior';
+if (!in_array($user_rank, ['junior', 'senior', 'lead', 'manager'])) {
+    $user_rank = 'junior';
 }
 
 $check = $pdo->prepare('SELECT id FROM users WHERE email = ?');
@@ -31,8 +31,8 @@ if ($check->fetch()) {
 
 $hash = password_hash($password, PASSWORD_BCRYPT);
 
-$stmt = $pdo->prepare('INSERT INTO users (name, email, password_hash, role, department, rank) VALUES (?, ?, ?, ?, ?, ?)');
-$stmt->execute([$name, $email, $hash, $role, $department, $rank]);
+$stmt = $pdo->prepare('INSERT INTO users (name, email, password_hash, role, department, user_rank) VALUES (?, ?, ?, ?, ?, ?)');
+$stmt->execute([$name, $email, $hash, $role, $department, $user_rank]);
 
 send_response(201, [
     'message' => 'Account created',
@@ -42,6 +42,6 @@ send_response(201, [
         'email' => $email,
         'role' => $role,
         'department' => $department,
-        'rank' => $rank
+        'user_rank' => $user_rank
     ]
 ]);

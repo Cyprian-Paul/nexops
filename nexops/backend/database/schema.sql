@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
     password_hash VARCHAR(255) NOT NULL,
     role ENUM('admin', 'user') NOT NULL DEFAULT 'user',
     department VARCHAR(100),
-    rank ENUM('junior', 'senior', 'lead', 'manager') DEFAULT 'junior',
+    user_rank ENUM('junior', 'senior', 'lead', 'manager') DEFAULT 'junior',
     profile_picture VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

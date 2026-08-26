@@ -176,7 +176,7 @@ function Settings() {
         <label>Department</label>
         <input type="text" value={department} onChange={(e) => setDepartment(e.target.value)} />
 
-        <p className="settings-static">Rank: {user.rank}</p>
+        <p className="settings-static">Rank: {user.user_rank}</p>
         <p className="settings-static">Role: {user.role}</p>
 
         {profileMessage && <p className="settings-message">{profileMessage}</p>}

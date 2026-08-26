@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $stmt = $pdo->prepare('
-    SELECT id, name, email, role, department, rank, profile_picture
+    SELECT id, name, email, role, department, user_rank, profile_picture
     FROM users
     WHERE id = ?
 ');
